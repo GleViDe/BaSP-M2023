@@ -13,3 +13,7 @@ Course to become a software professional in web/mobile programming technologies.
 
 - I learned to create a local and remote repository, to work my projects using Git & GitHub. And now I'm using a remote repository I created on GitHub to share the weekly problem files.
 - I learned about the structure and function of HTML programming for web project development. I am currently designing the structure of the index.html file, following the design of the landing page that was developed in the screenflow of the problem of Week 01.
+
+## Authors
+
+- [Glenda Viera](https://www.github.com/GleViDe)
