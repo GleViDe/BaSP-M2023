@@ -17,3 +17,5 @@ Course to become a software professional in web/mobile programming technologies.
 ## Authors
 
 - [Glenda Viera](https://www.github.com/GleViDe)
+
+![rocket-logo](https://user-images.githubusercontent.com/127681628/227655984-6ef31a6d-1c37-4b24-bfcc-9dc4da232a72.png)
