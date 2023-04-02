@@ -70,6 +70,10 @@ p {
     text-align: center;
 }
 
+.why-us {
+    height: 670px;
+}
+
 header img {
     height: 115px;
     margin-left: 70px;
@@ -116,4 +120,32 @@ p + a {
 
 .about-us p {
     padding: 65px 325px 0;
+}
+
+.why-us h2 {
+    padding: 120px 10px 55px 0;
+}
+
+.why-us h2, .why-us p {
+    display: inline-block;
+    padding-left: 45px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: #373867;
+}
+
+.why-us article {
+    float: left;
+    width: 650px;
+}
+
+.why-us > img {
+    width: 575px;
+}
+
+.why-us article img {
+    float: right;
+    margin: 120px 160px 50px 0;
+    height: 50px;
 }
