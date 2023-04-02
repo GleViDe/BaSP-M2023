@@ -11,8 +11,6 @@ header {
 h1 {
     display: inline-block;
     position: absolute;
-    /* left: 629px;
-    top: 69px; */
     margin-left: 470px;
     margin-top: 70px;
     font-size: 40px;
@@ -56,61 +54,6 @@ p {
     line-height: 30px;
 }
 
-.nav-menu {
-    position: fixed;
-    width: 270px;
-}
-
-.about-us {
-    height: 625px;
-    background-image: url(../../Assets/Images/blue-gym-banner.png);
-    background-position: center;
-    background-size: cover;
-    color: white;
-    text-align: center;
-}
-
-.why-us {
-    height: 670px;
-}
-
-.blue-title {
-    width: 535px;
-    margin-left: 0;
-    margin-bottom: 100px;
-    padding: 30px 110px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 47px;
-    color: white;
-    background-color: #373867;
-}
-
-.activities {
-    display: inline-block;
-    position: relative;
-    width: 480px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 47px;
-    color: white;
-}
-
-.membership {
-    float: left;
-    width: 385px;
-    height: 710px;
-}
-
-.container {
-    margin-top: 270px;
-    padding-top: 40px;
-    width: 325px;
-    background-color: white;
-    border-top: 45px solid rgba(55, 56, 103, 0.4);
-    text-align: center;
-}
-
 header img {
     height: 115px;
     margin-left: 70px;
@@ -125,6 +68,13 @@ header h2 {
     font-weight: 700;
     font-size: 15px;
     line-height: 15px;
+}
+
+.nav-menu {
+    position: sticky;
+    left: 0px;
+    top: 217px;
+    width: 270px;
 }
 
 .nav-menu li {
@@ -148,6 +98,15 @@ p + a {
     line-height: 30px;
 }
 
+.about-us {
+    height: 625px;
+    background-image: url(../../Assets/Images/blue-gym-banner.png);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
 .about-us h2 {
     padding-top: 180px;
     font-weight: 700;
@@ -157,6 +116,10 @@ p + a {
 
 .about-us p {
     padding: 65px 325px 0;
+}
+
+.why-us {
+    height: 670px;
 }
 
 .why-us h2 {
@@ -185,6 +148,28 @@ p + a {
     float: right;
     margin: 120px 160px 50px 0;
     height: 50px;
+}
+
+.blue-title {
+    width: 535px;
+    margin-left: 0;
+    margin-bottom: 100px;
+    padding: 30px 110px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: white;
+    background-color: #373867;
+}
+
+.activities {
+    display: inline-block;
+    position: relative;
+    width: 480px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: white;
 }
 
 .activity div {
@@ -216,6 +201,21 @@ p + a {
     top: 60px;
     left: 50px;
     width: 400px;
+    text-align: center;
+}
+
+.membership {
+    float: left;
+    width: 385px;
+    height: 795px;
+}
+
+.container {
+    margin-top: 270px;
+    padding-top: 40px;
+    width: 325px;
+    background-color: white;
+    border-top: 45px solid rgba(55, 56, 103, 0.4);
     text-align: center;
 }
 
