@@ -26,7 +26,7 @@ aside {
     float: left;
     padding-top: 30px;
     width: 270px;
-    height: 5700px;
+    height: 6200px;
     text-align: center;
     background-color: #373867;
     color: white;
@@ -204,6 +204,10 @@ p + a {
     text-align: center;
 }
 
+.memberships {
+    height: 1000px;
+}
+
 .membership {
     float: left;
     width: 385px;
@@ -277,4 +281,55 @@ p + a {
     font-weight: 700;
     font-size: 30px;
     line-height: 35px;
+}
+
+.add {
+    padding: 90px 110px;
+}
+
+.add div {
+    float: left;
+    width: 655px;
+}
+
+.add h2 {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 95px;
+}
+
+.add p {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+    text-align: justify;
+}
+
+.add img {
+    width: 325px;
+    margin-left: 35px;
+}
+
+.nav-button {
+    display: none;
+}
+
+.reservation {
+    background-color: #AACE9B;
+    color: white;
+}
+
+.offers {
+    background-color: #373867;
+    color: white;
+}
+
+.classes {
+    background-color: white;
+    color: #373867;
+}
+
+.contact-us {
+    background-color: #919194;
+    color: #373867;
 }
