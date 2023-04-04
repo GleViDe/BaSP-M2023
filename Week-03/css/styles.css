@@ -26,7 +26,7 @@ aside {
     float: left;
     padding-top: 30px;
     width: 270px;
-    height: 7100px;
+    height: 7150px;
     text-align: center;
     background-color: #373867;
     color: white;
@@ -52,6 +52,11 @@ p {
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
+}
+
+footer {
+    text-align: center;
+    background-color: #D9D9D9;
 }
 
 header img {
@@ -406,6 +411,15 @@ input[type="submit"] {
     font-size: 15px;
     line-height: 15px;
     border-radius: 5px;
+}
+
+.social-media {
+    padding: 40px 0;
+    background-color: white;
+}
+
+.social-media img {
+    margin: 0 145px;
 }
 
 
