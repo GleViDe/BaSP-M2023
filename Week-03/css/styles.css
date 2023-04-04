@@ -26,7 +26,7 @@ aside {
     float: left;
     padding-top: 30px;
     width: 270px;
-    height: 6200px;
+    height: 7100px;
     text-align: center;
     background-color: #373867;
     color: white;
@@ -333,3 +333,79 @@ p + a {
     background-color: #919194;
     color: #373867;
 }
+
+.form article {
+    box-sizing: border-box;
+    margin: 140px 290px;
+    padding: 0 20px;
+    background-color: white;
+    color: #373867;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.form article h2 {
+    padding: 40px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+form div {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 40px;
+    border: 1px solid #373867;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-radius: 50%;
+    border: 5px solid #34636E;
+}
+
+input[type="text"], input[type="email"] {
+    border: none;
+}
+
+.text {
+    margin-right: 50px;
+}
+
+input[type="email"] {
+    width: 435px;
+}
+
+.your-text {
+    display: block;
+    border: none;
+}
+
+.textarea {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+}
+
+input[type="submit"] {
+    margin-bottom: 10px;
+    background-color: #AACE9B;
+    border: none;
+    width: 155px;
+    height: 35px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    border-radius: 5px;
+}
+
+
