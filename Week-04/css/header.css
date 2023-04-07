@@ -12,11 +12,40 @@ header {
 }
 
 .logo {
-    width: 60px;
+    height: 65px;
 }
 
 header h2 {
     font-size: 0.6em;
     font-weight: 700;
     line-height: 0.7em;
+    text-align: right;
+}
+
+@media (min-width: 601px) and (max-width:1024px) {
+    .logo {
+        height: 85px;
+    }
+
+    header h2 {
+        font-size: 1em;
+    }
+
+    .menu {
+        visibility: hidden;
+    }
+}
+
+@media (min-width: 1025px) {
+    .logo {
+        height: 115px;
+    }
+
+    header h2 {
+        font-size: 1em;
+    }
+
+    .menu {
+        visibility: hidden;
+    }
 }
