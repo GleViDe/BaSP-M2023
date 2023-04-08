@@ -37,14 +37,62 @@ aside {
 }
 
 p + a {
-    margin: 5px;
+    margin: 30px;
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
 }
 
+.section-container {
+    width: 100%;
+}
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 245px;
+    min-width: 260px; 
+    background-image: url(../../Assets/Images/blue-gym-banner.png);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+.about-us h2 {
+    margin-bottom: 3%;
+    font-weight: 700;
+    font-size: 1.25em;
+    line-height: 1.4em;
+}
+
+.about-us p{
+    margin: 0 18%;
+}
+
+@media (min-width: 601px) {
+    .about-us {
+        min-height: 539px;
+    }
+    
+    .about-us h2 {
+        font-size: 2.5em;
+        line-height: 1.5em;
+    }
+}
+
 @media (min-width: 1025px) {
     aside {
         display: block;
+    }
+    
+    .section-container {
+        float: right;
+        width: 75%;
+    }
+
+    .about-us {
+        min-height: 624px;
     }
 }
