@@ -1,13 +1,11 @@
 main {
     display: flex;
-    height: 1000px;
 }
 
 aside {
     display: none;
     padding-top: 30px;
     width: 25%;
-    height: 100%;
     text-align: center;
     background-color: #373867;
     color: white;
@@ -127,6 +125,53 @@ p + a {
     width: 276px;
 }
 
+.blue-title {
+    width: 80%;
+    margin: 14% 0;
+    padding: 3% 13%;
+    font-weight: 700;
+    font-size: 1.25em;
+    line-height: 1.4em;
+    text-align: center;
+    color: white;
+    background-color: #373867;
+}
+
+.activity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.activities {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 270px;
+    font-weight: 400;
+    font-size: 1.25em;
+    line-height: 1.4em;
+    text-align: center;
+}
+
+.activities img {
+    position: relative;
+    width: 100%;
+    filter:brightness(50%);
+}
+
+.description {
+    position: absolute;
+    z-index: 1;
+    width: 216px;
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
 @media (min-width: 601px) {
     .about-us {
         min-height: 539px;
@@ -150,13 +195,31 @@ p + a {
         line-height: 1.2em;
     }
 
-    .why-us p {
-        font-size: 1.6em;
-        line-height: 1.5em;
-    }
-
     .why-us > img {
         display: inline-block;
+    }
+
+    .blue-title {
+        padding: 0;
+        font-size: 1.25em;
+        line-height: 1.4em;
+        font-size: 2.5em;
+        line-height: 3em;
+    }
+
+    .activity {
+        justify-content: flex-start;
+        margin-left: 2%;
+    }
+
+    .activities {
+        margin-bottom: 0;
+    }
+
+    .description p {
+        width: 216px;
+        font-size: 1em;
+        line-height: 1.5em;
     }
 }
 
@@ -183,5 +246,20 @@ p + a {
     .why-us p {
         font-size: 2.5em;
         line-height: 1.2em;
+    }
+
+    .activity {
+        margin-left: 13%;
+    }
+
+    .activities {
+        justify-content: flex-start;
+        width: 460px;
+    }
+
+    .description p, .description h3 {
+        width: 425px;
+        font-size: 2em;
+        line-height: 2em;
     }
 }
