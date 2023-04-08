@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #ECE9F1;
     font-family: 'Roboto', sans-serif;
@@ -9,13 +13,23 @@ h1 {
     line-height: 1.5em;
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
-    h1 {
-        font-size: 2.5em;
-    }
+ul {
+    list-style-type: none;
 }
 
-@media (min-width: 1025px) {
+a {
+    text-decoration: none;
+    color: white;
+}
+
+p {
+    margin: 5px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+@media (min-width: 601px) {
     h1 {
         font-size: 2.5em;
     }
