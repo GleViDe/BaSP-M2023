@@ -47,6 +47,30 @@ p + a {
     width: 100%;
 }
 
+.overlay-menu {
+    /* Here goes a display:flex property instead of display: none */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40vh;
+    background-color: #373867;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.overlay-menu li {
+    margin: 20px 0;
+    font-size: 0.6em;
+    font-weight: 800;
+    line-height: 0.75em;
+    text-align: center;
+}
+
 .about-us {
     display: flex;
     flex-direction: column;
