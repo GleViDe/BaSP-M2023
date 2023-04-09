@@ -8,7 +8,7 @@ aside {
     width: 25%;
     text-align: center;
     background-color: #373867;
-    color: white;
+    color: #FFFFFF;
 }
 
 .nav-menu {
@@ -75,7 +75,7 @@ p + a {
     background-image: url(../../Assets/Images/blue-gym-banner.png);
     background-position: center;
     background-size: cover;
-    color: white;
+    color: #FFFFFF;
     text-align: center;
 }
 
@@ -121,7 +121,7 @@ p + a {
     margin: 14% 0;
     padding: 3% 13%;
     text-align: center;
-    color: white;
+    color: #FFFFFF;
     background-color: #373867;
 }
 
@@ -162,9 +162,7 @@ p + a {
     z-index: 1;
     width: 216px;
     text-align: center;
-    color: white;
-    font-size: 1em;
-    line-height: 1.5em;
+    color: #FFFFFF;
 }
 
 .memberships {
@@ -184,7 +182,7 @@ p + a {
     padding-top: 40px;
     width: 325px;
     height: fit-content;
-    background-color: white;
+    background-color: #FFFFFF;
     border-top: 45px solid rgba(55, 56, 103, 0.4);
     text-align: center;
 }
@@ -238,10 +236,68 @@ p + a {
     height: 75px;
     border: none;
     background-color: #49A37B;
-    color: white;
+    color: #FFFFFF;
     font-weight: 700;
     font-size: 30px;
     line-height: 35px;
+}
+
+.adds {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10% 12%;
+    width: 100%;
+}
+
+.add h2 {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+}
+
+.add p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: justify;
+}
+
+.add img {
+    margin-top: 30%;
+    width: 128px;
+}
+
+.nav-button {
+    display: none;
+}
+
+.reservation {
+    background-color: #AACE9B;
+    color: #FFFFFF;
+}
+
+.offers {
+    background-color: #373867;
+    color: #FFFFFF;
+}
+
+.classes {
+    background-color: #FFFFFF;
+    color: #373867;
+}
+
+.contact-us {
+    background-color: #919194;
+    color: #373867;
 }
 
 @media (min-width: 601px) {
@@ -277,6 +333,30 @@ p + a {
 
     .activities {
         margin-bottom: 0;
+    }
+
+    .add {
+        justify-content: flex-start;
+        padding: 5% 7%;
+    }
+
+    .add div {
+        width: 50%;
+    }
+
+    .add h2 {
+        font-size: 80px;
+        line-height: 95px;
+    }
+
+    .add p {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .add img {
+        margin-left: 20%;
+        width: 270px;
     }
 }
 
@@ -334,5 +414,15 @@ p + a {
 
     .memberships {
         justify-content: center;
+    }
+
+    .add h2 {
+        font-size: 65px;
+        line-height: 75px;
+    }
+
+    .add img {
+        margin-left: 30%;
+        width: 325px;
     }
 }
