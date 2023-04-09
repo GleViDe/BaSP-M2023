@@ -167,14 +167,86 @@ p + a {
     line-height: 1.5em;
 }
 
+.memberships {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.membership {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.container {
+    margin-top: 270px;
+    padding-top: 40px;
+    width: 325px;
+    height: fit-content;
+    background-color: white;
+    border-top: 45px solid rgba(55, 56, 103, 0.4);
+    text-align: center;
+}
+
+.membership img{
+    position: absolute;
+    z-index: -1;
+    width: 390px;
+}
+
+.container h3, span {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 30.596px;
+    line-height: 36px;
+    color: #AACE9B;
+}
+
+.container span {
+    display: block;
+    color: #373867;
+}
+
+.container ul {
+    margin-top: 30px;
+    padding-left: 40px;
+    text-align: left;
+    border-bottom: 1px solid #AFAFC2;
+    list-style-image: url(../../Assets/Images/checkmark.png);
+}
+
+.container li {
+    margin: 15px 0;
+    font-weight: 400;
+    font-size: 15.298px;
+    line-height: 18px;
+}
+
+.container p {
+    margin: 20px 100px;
+    width: 130px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.container button {
+    width: 100%;
+    height: 75px;
+    border: none;
+    background-color: #49A37B;
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+}
+
 @media (min-width: 601px) {
     .about-us {
         min-height: 539px;
-    }
-    
-    .about-us h2 {
-        font-size: 40px;
-        line-height: 47px;
     }
 
     .why-us {
@@ -183,11 +255,6 @@ p + a {
 
     .why-us article {
         width: 60%;
-    }
-
-    .why-us h2 {
-        font-size: 40px;
-        line-height: 47px;
     }
 
     .why-us p {
@@ -200,9 +267,7 @@ p + a {
     }
 
     .blue-title {
-        padding: 3% 10%;
-        font-size: 40px;
-        line-height: 47px;
+        padding: 3% 1%;
     }
 
     .activity {
@@ -261,5 +326,13 @@ p + a {
         width: 425px;
         font-size: 40px;
         line-height: 47px;
+    }
+
+    .membership {
+        width: 390px;
+    }
+
+    .memberships {
+        justify-content: center;
     }
 }
