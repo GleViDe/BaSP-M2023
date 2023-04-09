@@ -12,9 +12,9 @@ header {
 }
 
 header h2 {
-    font-size: 0.6em;
+    font-size: 9px;
     font-weight: 700;
-    line-height: 0.7em;
+    line-height: 11px;
     text-align: right;
 }
 
@@ -24,7 +24,8 @@ header h2 {
     }
 
     header h2 {
-        font-size: 1em;
+        font-size: 14px;
+        line-height: 16px;
     }
 }
 
