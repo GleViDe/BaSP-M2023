@@ -392,7 +392,6 @@ textarea {
 }
 
 input[type="submit"] {
-    justify-self: flex-end;
     margin-bottom: 10px;
     background-color: #AACE9B;
     border: none;
