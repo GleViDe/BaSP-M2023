@@ -1,17 +1,21 @@
 # Become a Software Professional 2023
 
-Course to become a software professional in web/mobile programming technologies. Here you will find a brief description of the development and activities during the development of the course.
+The company MEGA ROCKET SA is a gym with partners and employees that asked us for the development of a web system that facilitates the monthly management of its schedule grid and the coaches in charge of each class, in such a way that their members can sign up dynamic without exceeding the available quotas.The system has a main screen (Landing) with different sections, and which is contained in this repository.
+
+In this course to become a software professional in web/mobile programming technologies, you will find a brief description of the development and activities during the development of the course.
 
 ## What will I find inside this repository?
 Inside here are the files of the project of the web page based on the landing page of the Figma screenflow. They are divided into weeks: 
 - Week-02 merely contains the semantic structure of the web page.
 - Week-03 contains this HTML structure styled with CSS using the pixel perfect method.
+- Week-04 contains this HTML structure styled with CSS using Responsive design with Mobile First method. You can find this design in https://glevide.github.io/BaSP-M2023/Week-04/index.html
 
 ## Technology contained in this repository
 
 Until now, you will find:
 - HTML
 - CSS with the pixel perfect method
+- CSS with Responsive design with Mobile First method
 
 ## Development of the course through the weeks
 
@@ -32,8 +36,14 @@ Until now, you will find:
 - We had to restructure the HTML document to be able to style it using css, without implementing methods like flexbox yet. 
 - We implemented a CSS design using the pixel perfect method, without making the page responsive, for a display size of 1512.
 
+### Week 04
+- We had to restructure the HTML document to be able to style it using a Responsive web design, implementing flexbox methods. 
+- We learned to create a Responsive Web using Breakpoints through media query and Flexible Layout applying the knowledge acquired from flexbox.
+- A Mobile First design was applied for the development of the problem.
+- We learned to work with the GitHub Pages. You can find this design in https://glevide.github.io/BaSP-M2023/Week-04/index.html
+
 ## Authors
 
-- [Glenda Viera](https://www.github.com/GleViDe)
+- [Glenda Viera](https://www.github.com/GleViDe) <img src="https://user-images.githubusercontent.com/127681628/227655984-6ef31a6d-1c37-4b24-bfcc-9dc4da232a72.png" alt="rocket-logo" width="100" style="float:right;  margin:0 50%;">
 
-![rocket-logo](https://user-images.githubusercontent.com/127681628/227655984-6ef31a6d-1c37-4b24-bfcc-9dc4da232a72.png)
+
