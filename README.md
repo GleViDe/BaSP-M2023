@@ -8,7 +8,8 @@ In this course to become a software professional in web/mobile programming techn
 Inside here are the files of the project of the web page based on the landing page of the Figma screenflow. They are divided into weeks: 
 - Week-02 merely contains the semantic structure of the web page.
 - Week-03 contains this HTML structure styled with CSS using the pixel perfect method.
-- Week-04 contains this HTML structure styled with CSS using Responsive design with Mobile First method. You can find this design in [link](https://glevide.github.io/BaSP-M2023/)
+- Week-04 contains this HTML structure styled with CSS using Responsive design with Mobile First method. You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-04)
+- Week-05. You can find these exercises in [link](https://glevide.github.io/BaSP-M2023/Week-05)
 
 ## Technology contained in this repository
 
@@ -40,7 +41,10 @@ Until now, you will find:
 - We had to restructure the HTML document to be able to style it using a Responsive web design, implementing flexbox methods. 
 - We learned to create a Responsive Web using Breakpoints through media query and Flexible Layout applying the knowledge acquired from flexbox.
 - A Mobile First design was applied for the development of the problem.
-- We learned to work with the GitHub Pages. You can find this design in [link](https://glevide.github.io/BaSP-M2023/)
+- We learned to work with the GitHub Pages. You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-04)
+
+### Week 05
+- You can find these exercises in [link](https://glevide.github.io/BaSP-M2023/Week-05)
 
 ## Authors
 
