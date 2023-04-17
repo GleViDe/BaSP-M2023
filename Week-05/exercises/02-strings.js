@@ -61,12 +61,13 @@ operador +).*/
 
 console.log('-Exercise 2.f:');
 
-var f = "my favorite Movie is: ";
-var g = "the lord of the Rings"
+var f = "artiFicial inteLLigence";
 
-var resultF1 = f.substring(0,1).toUpperCase() + f.substring(1).toLowerCase(); 
-var resultF2 = g.substring(0,1).toUpperCase() + g.substring(1).toLowerCase();
+var blank = f.indexOf(" ");
+var firstPart = f.substring(0,blank);
+var secondPart = f.substring(blank + 1);
 
-var resultF = resultF1 + resultF2;
+var result = firstPart.substring(0,1).toUpperCase() + firstPart.substring(1).toLowerCase() + " " +
+secondPart.substring(0,1).toUpperCase() + secondPart.substring(1).toLowerCase();
 
-console.log('String type variable f and g with value '+ f +' and '+ g +' respectively remains as '+ resultF);
+console.log('String type variable f with value '+ f +' remains as '+ result);
