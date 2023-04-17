@@ -18,7 +18,7 @@ header h2 {
     text-align: right;
 }
 
-@media (min-width: 601px) {
+@media screen and (min-width: 600px) {
     .logo {
         height: 85px;
     }
@@ -29,7 +29,7 @@ header h2 {
     }
 }
 
-@media (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .logo {
         height: 115px;
     }

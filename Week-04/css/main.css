@@ -44,7 +44,6 @@ p + a {
 }
 
 .overlay-menu {
-    /* Here goes a display:flex property instead of display: none */
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -127,6 +126,7 @@ p + a {
 
 .activity {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -197,7 +197,7 @@ p + a {
     width: 325px;
     height: fit-content;
     background-color: #FFFFFF;
-    border-top: 45px solid rgba(55, 56, 103, 0.4);
+    border-top: 45px solid #37386766;
     text-align: center;
 }
 
@@ -328,7 +328,7 @@ form {
     box-sizing: border-box;
     width: 315px;
     margin: 10% 0;
-    padding: 0 5%;
+    padding: 0 3%;
     background-color: white;
     color: #373867;
     border-radius: 20px;
@@ -373,7 +373,7 @@ input[type="text"] {
 }
 
 .text {
-    margin-right: 3%;
+    margin-right: 10px;
 }
 
 input[type="email"] {
@@ -418,7 +418,7 @@ input[type="submit"] {
 }
 
 
-@media (min-width: 601px) {
+@media screen and (min-width: 601px) {
     .overlay-menu {
         top: 110px;
     }
@@ -449,6 +449,7 @@ input[type="submit"] {
     }
 
     .activity {
+        flex-direction: row;
         justify-content: flex-start;
         margin-left: 2%;
     }
@@ -517,7 +518,7 @@ input[type="submit"] {
     }
 }
 
-@media (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
     aside {
         display: block;
     }
@@ -568,9 +569,11 @@ input[type="submit"] {
 
     .membership {
         width: 390px;
+        flex-shrink: 1;
     }
 
     .memberships {
+        flex-wrap: nowrap;
         justify-content: center;
     }
 
