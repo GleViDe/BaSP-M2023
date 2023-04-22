@@ -1,0 +1,40 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5% 7%;
+    min-width: 240px;
+    color: #373867;
+}
+
+.logo {
+    height: 65px;
+}
+
+header h2 {
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 11px;
+    text-align: right;
+}
+
+@media screen and (min-width: 600px) {
+    .logo {
+        height: 85px;
+    }
+
+    header h2 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .logo {
+        height: 115px;
+    }
+
+    .menu {
+        visibility: hidden;
+    }
+}
