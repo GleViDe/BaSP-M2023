@@ -10,6 +10,7 @@ Inside here are the files of the project of the web page based on the landing pa
 - Week-03 contains this HTML structure styled with CSS using the pixel perfect method.
 - Week-04 contains this HTML structure styled with CSS using Responsive design with Mobile First method. You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-04)
 - Week-05 contains a very simple web page structure, with javascript files related to it. You can find these exercises in [link](https://glevide.github.io/BaSP-M2023/Week-05)
+- You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-06/views)
 
 ## Technology contained in this repository
 
@@ -49,6 +50,9 @@ Until now, you will find:
 - We acquire the ability to propose a valid solution for a particular programming problem.
 - We learned to use basic JavaScript structures, such as strings, arrays, if-else, for loop and functions
 - You can find the exercises asociated to this week in [link](https://glevide.github.io/BaSP-M2023/Week-05)
+
+### Week 06
+- Login and Sign-up added to Landing Page in Tablet and Mobile versions.
 
 ## Authors
 
