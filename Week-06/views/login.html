@@ -11,24 +11,33 @@
     <script defer src="../js/login.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img class="logo-img" src="../../Assets/Images/rocket-logo.png" alt="Logo">
-            <img class="name-img" src="../../Assets/Images/rocket-name.png" alt="Name of the Project">
-        </div>
-        <a href="../views/index.html">HOME</a>
-    </header>
     <main>
         <!-- pending formatting in desktop version -->
         <aside> 
-            <p>HOME</p>
+            <div class="logo">
+                <img class="logo-img" src="../../Assets/Images/rocket-logo.png" alt="Logo">
+                <img class="name-img" src="../../Assets/Images/rocket-name.png" alt="Name of the Project">
+            </div>
+            <!-- pending adding style to hover -->
+            <a href="../views/index.html">HOME</a>
         </aside>
         <div class="container">
+            <header></header>
             <section class="form">
                 <article>
                     <h2>Log-In</h2>
                     <form action="#" method="POST">
-                        
+                        <div class="input">
+                            <label for="email">Email</label>
+                            <input type="text" class="text" id="email" name="email" placeholder="example@example.com">
+                        </div>
+                        <div class="input">
+                            <label for="password">Password</label>
+                            <input type="password" class="text" id="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Continue">
+                        </div>
                     </form>
                 </article>
             </section>
