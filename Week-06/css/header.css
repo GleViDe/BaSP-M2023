@@ -18,6 +18,18 @@ header h2 {
     text-align: right;
 }
 
+.menu {
+    display: none;
+}
+
+.temp-buttons a {
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 12px;
+    text-align: center;
+    color: #373867;
+}
+
 @media screen and (min-width: 600px) {
     .logo {
         height: 85px;
@@ -27,6 +39,11 @@ header h2 {
         font-size: 14px;
         line-height: 16px;
     }
+
+    .temp-buttons a {
+        font-size: 20px;
+        line-height: 23px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -35,6 +52,11 @@ header h2 {
     }
 
     .menu {
+        display: inline-block;
         visibility: hidden;
+    }
+
+    .temp-buttons {
+        display: none;
     }
 }
