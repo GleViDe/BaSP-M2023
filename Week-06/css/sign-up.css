@@ -38,9 +38,12 @@ aside {
     height: 25px;
 }
 
-aside a {
+aside ul {
     align-self: flex-start;
     margin: 5% 5%;
+}
+
+aside a {
     text-decoration: none;
     font-size: 15px;
     font-weight: 800;
@@ -105,6 +108,10 @@ label {
     border-radius: 5px;
 }
 
+.error {
+    color: #EB2222;
+}
+
 .submit {
     display: flex;
     justify-content: center;
@@ -163,17 +170,20 @@ input[type="submit"] {
     main {
         display: flex;
         flex-wrap: wrap;
+        height: 100vh;
     }
 
     aside {
         flex-direction: column;
         min-width: auto;
         width: 20%;
-        height: 930px;
+    }
+
+    aside ul {
+        align-self: center;
     }
 
     aside a {
-        align-self: auto;
         font-size: 40px;
         line-height: 47px;
     }

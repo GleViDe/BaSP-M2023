@@ -38,9 +38,12 @@ aside {
     height: 25px;
 }
 
-aside a {
+aside ul {
     align-self: flex-start;
     margin: 5% 5%;
+}
+
+aside a {
     text-decoration: none;
     font-size: 15px;
     font-weight: 800;
@@ -167,17 +170,20 @@ input[type="submit"] {
     main {
         display: flex;
         flex-wrap: wrap;
+        height: 100vh;
     }
 
     aside {
         flex-direction: column;
         min-width: auto;
         width: 20%;
-        height: 100vh;
+    }
+
+    aside ul {
+        align-self: auto;
     }
 
     aside a {
-        align-self: auto;
         font-size: 40px;
         line-height: 47px;
     }

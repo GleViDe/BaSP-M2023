@@ -1,10 +1,10 @@
 //Function to validate if the password contains only numbers and letters
 function onlyNumbersAndLetters(expresion) {
     for (var i = 0; i < expresion.length; i++) {
-        var caracterCode = expresion.charCodeAt(i);
-        if (!(caracterCode >= 48 && caracterCode <= 57) && // numbers
-        !(caracterCode >= 65 && caracterCode <= 90) && // upper letters
-        !(caracterCode >= 97 && caracterCode <= 122)) { // lower letters
+        var charCode = expresion.charCodeAt(i);
+        if (!(charCode >= 48 && charCode <= 57) && // numbers
+        !(charCode >= 65 && charCode <= 90) && // upper letters
+        !(charCode >= 97 && charCode <= 122)) { // lower letters
             return false;
         }
     }
@@ -12,7 +12,6 @@ function onlyNumbersAndLetters(expresion) {
 }
 
 //Validation of the email input
-
 var emailInput = document.getElementById('email');
 var emailError = document.createElement('div');
 var errorTextEmail = document.createTextNode('');
@@ -22,7 +21,7 @@ emailError.appendChild(errorTextEmail);
 var emailRegex = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 emailError.className = 'error';
 
-emailInput.addEventListener('blur', function(evet) {
+emailInput.addEventListener('blur', function(event) {
     var emailValue = emailInput.value.trim();
     if(emailValue === "") {
         errorTextEmail.nodeValue = 'Field Required';
@@ -39,7 +38,6 @@ emailInput.addEventListener('focus', function() {
 });
 
 //Validation of password input
-
 var pswInput = document.getElementById('password');
 var pswError = document.createElement('div');
 var errorTextPsw = document.createTextNode('');
