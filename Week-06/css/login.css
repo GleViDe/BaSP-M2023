@@ -105,6 +105,10 @@ label {
     border-radius: 5px;
 }
 
+.error {
+    color: #EB2222;
+}
+
 .submit {
     display: flex;
     justify-content: center;
