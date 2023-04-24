@@ -1,4 +1,3 @@
-//Function to validate that the value consists of letters only 
 function onlyLetters(name) {
     for(var i = 0; i < name.length; i++) {
         var charCode = name.charCodeAt(i);
@@ -9,58 +8,55 @@ function onlyLetters(name) {
     return true;
 }
 
-//Function to validate that the value is a number
 function isNumber(number) {
     for(var i = 0; i < number.length; i++) {
         var charCode = number.charCodeAt(i);
-        if(!(charCode >= 48 && charCode <= 57)) { //not a number
+        if(!(charCode >= 48 && charCode <= 57)) { 
             return false;
         }
     }
     return true;
 }
 
-//Function to validate that the expresion only contains numbers and letters
 function onlyNumbersAndLetters(expresion) {
     for(var i = 0; i < expresion.length; i++) {
         var charCode = expresion.charCodeAt(i);
         if (!(charCode === 32) &&
-        !(charCode >= 48 && charCode <= 57) && // numbers
-        !(charCode >= 65 && charCode <= 90) && // upper letters
-        !(charCode >= 97 && charCode <= 122)) { // lower letters
+        !(charCode >= 48 && charCode <= 57) && 
+        !(charCode >= 65 && charCode <= 90) && 
+        !(charCode >= 97 && charCode <= 122)) { 
             return false;
         }
     }
     return true;
 }
 
-//Function to check that the password has the required characters
 function testPsw(value) {
     for(var i = 0; i < value.length; i++) {
         var charCode = value.charCodeAt(i);
-        if(charCode >= 48 && charCode <= 57){//if it has at least a number is OK
+        if(charCode >= 48 && charCode <= 57){
             break;
         }
     }
-    if(i === value.length) { //search in the entire array and did not find the character
+    if(i === value.length) { 
         return false;
     }
     for(var i = 0; i < value.length; i++) {
         var charCode = value.charCodeAt(i);
-        if(charCode >= 65 && charCode <= 90){//if it has at least an upper letter is OK
+        if(charCode >= 65 && charCode <= 90){
             break;
         }
     }
-    if(i === value.length) { //search in the entire array and did not find the character
+    if(i === value.length) {
         return false;
     }
     for(var i = 0; i < value.length; i++) {
         var charCode = value.charCodeAt(i);
-        if(charCode >= 97 && charCode <= 122){//if it has at least a lower letter is OK
+        if(charCode >= 97 && charCode <= 122){
             break;
         }
     }
-    if(i === value.length) { //search in the entire array and did not find the character
+    if(i === value.length) {
         return false;
     }
     return true;
@@ -77,15 +73,12 @@ nameError.className = 'error';
 
 nameInput.addEventListener('blur', function() {
     var nameValue = nameInput.value.trim();
-    if(nameValue === "") {
-        errorTextName.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if((!onlyLetters(nameValue)) || (nameValue.length < 4)) {
-        errorTextName.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-        nameInput.value = '';
-    }
+    if(nameValue === "")
+        errorTextName.nodeValue = 'Name field Required';
+    else if(!onlyLetters(nameValue))
+        errorTextName.nodeValue = 'Name field must only contain letters';
+    else if(nameValue.length < 4)
+        errorTextName.nodeValue = 'Name must be more than 3 characters';
 });
 
 nameInput.addEventListener('focus', function() {
@@ -103,15 +96,12 @@ lastNameError.className = 'error';
 
 lastNameInput.addEventListener('blur', function() {
     var lastNameValue = lastNameInput.value.trim();
-    if(lastNameValue === "") {
-        errorTextLastName.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if((!onlyLetters(lastNameValue)) || (lastNameValue.length < 4)) {
-        errorTextLastName.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-        lastNameInput.value = '';
-    }
+    if(lastNameValue === "")
+        errorTextLastName.nodeValue = 'Last Name field Required';
+    else if(!onlyLetters(lastNameValue))
+        errorTextLastName.nodeValue = 'Last Name field must only contain letters';
+    else if(lastNameValue.length < 4)
+        errorTextLastName.nodeValue = 'Last Name must be more than 3 characters';
 });
 
 lastNameInput.addEventListener('focus', function() {
@@ -129,15 +119,12 @@ dniError.className = 'error';
 
 dniInput.addEventListener('blur', function() {
     var dniValue = dniInput.value.trim();
-    if(dniValue === "") {
-        errorTextDNI.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if((!isNumber(dniValue)) || (dniValue.length < 7)) {
-        errorTextDNI.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-        dniInput.value = '';
-    }
+    if(dniValue === "")
+        errorTextDNI.nodeValue = 'ID Number field Required';
+    else if(!isNumber(dniValue))
+        errorTextDNI.nodeValue = 'ID Number must be a number';
+    else if(dniValue.length <= 7)
+        errorTextDNI.nodeValue = 'ID Number must be more than 7 digits';
 });
 
 dniInput.addEventListener('focus', function() {
@@ -156,17 +143,11 @@ dateError.className = 'error';
 dateInput.addEventListener('blur', function() {
     var dateValue = dateInput.value;
     var date = new Date(dateValue);
-    if(isNaN(date.getTime())) {
+    if(isNaN(date.getTime()))
         errorTextDate.nodeValue = 'Invalid Date';
-        alert('Invalid Date');
-        dateInput.value = '';
-    }
     var year = date.getFullYear();
-    if((year < 1900) || year > (new Date().getFullYear() - 12)){ //Must be at least 12 years old to join the gym
-        errorTextDate.nodeValue = 'Too young';
-        alert('Too young');
-        dateInput.value = '';
-    }
+    if((year < 1900) || year > (new Date().getFullYear() - 12))
+        errorTextDate.nodeValue = 'Must be over 12 to register';
 })
 
 dateInput.addEventListener('focus', function() {
@@ -184,15 +165,12 @@ phoneError.className = 'error';
 
 phoneInput.addEventListener('blur', function() {
     var phoneValue = phoneInput.value.trim();
-    if(phoneValue === "") {
-        errorTextPhone.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if((!isNumber(phoneValue)) || (phoneValue.length !== 10)) {
-        errorTextPhone.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-        dniInput.value = '';
-    }
+    if(phoneValue === "")
+        errorTextPhone.nodeValue = 'Phone field Required';
+    else if(!isNumber(phoneValue))
+        errorTextPhone.nodeValue = 'Phone number must be a number';
+    else if(phoneValue.length !== 10)
+        errorTextPhone.nodeValue = 'Phone number must have 10 digits';
 });
 
 phoneInput.addEventListener('focus', function() {
@@ -211,34 +189,20 @@ addressError.className = 'error';
 addressInput.addEventListener('blur', function() {
     var addressValue = addressInput.value.trim();
     var blank = addressValue.lastIndexOf(" ");
-    if(addressValue === "") {
-        errorTextAddress.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if(blank === -1){
-        errorTextAddress.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-        addressInput.value = '';
-    }
-    else if(addressValue.length < 5) {
-        errorTextAddress.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-        addressInput.value = '';
-    }
+    if(addressValue === "")
+        errorTextAddress.nodeValue = 'Address field Required';
+    else if(blank === -1)
+        errorTextAddress.nodeValue = 'Address must contain street and number';
+    else if(addressValue.length < 5)
+        errorTextAddress.nodeValue = 'Address must contain at least 5 characters';
     else {
         var address = addressValue;
         var street = address.substring(0, blank);
         var number = address.substring(blank + 1);
-        if(!onlyNumbersAndLetters(street)) {
-            errorTextAddress.nodeValue = 'Incorrect format';
-            alert('Incorrect format');
-            addressInput.value = '';
-        }
-        else if(!isNumber(number)) {
-            errorTextAddress.nodeValue = 'Incorrect format';
-            alert('Incorrect format');
-            addressInput.value = '';
-        }
+        if(!onlyNumbersAndLetters(street))
+            errorTextAddress.nodeValue = 'Street must only contain alphanumeric text';
+        else if(!isNumber(number))
+            errorTextAddress.nodeValue = 'Address number must be a number';
     }
 });
 
@@ -257,15 +221,12 @@ localError.className = 'error';
 
 localInput.addEventListener('blur', function() {
     var localValue = localInput.value.trim();
-    if(localValue === "") {
-        errorTextLocal.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if((!onlyNumbersAndLetters(localValue)) || (localValue.length < 4)) {
-        errorTextLocal.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-        localInput.value = '';
-    }
+    if(localValue === "")
+        errorTextLocal.nodeValue = 'Locality field Required';
+    else if(!onlyNumbersAndLetters(localValue))
+        errorTextLocal.nodeValue = 'Locality must only contain alphanumeric text';
+    else if(localValue.length < 4)
+        errorTextLocal.nodeValue = 'Locality must be more than 3 characters';
 });
 
 localInput.addEventListener('focus', function() {
@@ -283,15 +244,12 @@ postalError.className = 'error';
 
 postalInput.addEventListener('blur', function() {
     var postalValue = postalInput.value.trim();
-    if(postalValue === "") {
-        errorTextPostal.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if((!isNumber(postalValue)) || ((postalValue.length !== 4) && (postalValue.length !== 5 ))) {
-        errorTextPostal.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-        postalInput.value = '';
-    }
+    if(postalValue === "")
+        errorTextPostal.nodeValue = 'Postal Code field Required';
+    else if(!isNumber(postalValue))
+        errorTextPostal.nodeValue = 'Postal Code must be a number';
+    else if((postalValue.length !== 4) && (postalValue.length !== 5 ))
+        errorTextPostal.nodeValue = 'Postal Code must have 4 or 5 characters';
 });
 
 postalInput.addEventListener('focus', function() {
@@ -309,19 +267,40 @@ pswError.className = 'error';
 
 pswInput.addEventListener('blur', function(event) {
     var pswValue = pswInput.value.trim();
-    if(pswValue === "") {
-        errorTextPsw.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if ((!testPsw(pswValue)) || (pswValue.length < 8) || (!onlyNumbersAndLetters(pswValue))) {
-        errorTextPsw.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-        pswInput.value = '';
-    }
+    if(pswValue === "")
+        errorTextPsw.nodeValue = 'Password field Required';
+    else if (!testPsw(pswValue))
+        errorTextPsw.nodeValue = 'Password must contain one lowercase letter, one uppercase letter, and one number';
+    else if(pswValue.length < 8)
+        errorTextPsw.nodeValue = 'Password must contain at least 8 characters';
+    else if(!onlyNumbersAndLetters(pswValue))
+        errorTextPsw.nodeValue = 'Password must only contain alphanumeric text';
 });
 
 pswInput.addEventListener('focus', function() {
     errorTextPsw.nodeValue = '';
+});
+
+//Validation of confirm password input
+var confPswInput = document.getElementById('conf-password');
+var confPswError = document.createElement('div');
+var errorTextConfPsw = document.createTextNode('');
+var confPswContainer = document.querySelector('.conf-password');
+confPswContainer.appendChild(confPswError);
+confPswError.appendChild(errorTextConfPsw);
+confPswError.className = 'error';
+
+confPswInput.addEventListener('blur', function(event) {
+    var confPswValue = confPswInput.value.trim();
+    var pswValue = pswInput.value.trim();
+    if(confPswValue === "")
+        errorTextConfPsw.nodeValue = 'Confirm Password field Requires';
+    else if(confPswValue !== pswValue)
+        errorTextConfPsw.nodeValue = 'Please confirm your Password';
+});
+
+confPswInput.addEventListener('focus', function() {
+    errorTextConfPsw.nodeValue = '';
 });
 
 

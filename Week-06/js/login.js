@@ -1,10 +1,9 @@
-//Function to validate if the password contains only numbers and letters
 function onlyNumbersAndLetters(expresion) {
     for (var i = 0; i < expresion.length; i++) {
         var charCode = expresion.charCodeAt(i);
-        if (!(charCode >= 48 && charCode <= 57) && // numbers
-        !(charCode >= 65 && charCode <= 90) && // upper letters
-        !(charCode >= 97 && charCode <= 122)) { // lower letters
+        if (!(charCode >= 48 && charCode <= 57) && 
+        !(charCode >= 65 && charCode <= 90) && 
+        !(charCode >= 97 && charCode <= 122)) { 
             return false;
         }
     }
@@ -23,14 +22,10 @@ emailError.className = 'error';
 
 emailInput.addEventListener('blur', function(event) {
     var emailValue = emailInput.value.trim();
-    if(emailValue === "") {
-        errorTextEmail.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if(!emailRegex.test(emailValue)) {
-        errorTextEmail.nodeValue = 'Incorrect format';
-        alert('Incorrect format');
-    }
+    if(emailValue === "") 
+        errorTextEmail.nodeValue = 'Email field Required';
+    else if(!emailRegex.test(emailValue))
+        errorTextEmail.nodeValue = 'Email have an incorrect format';
 });
 
 emailInput.addEventListener('focus', function() {
@@ -48,17 +43,50 @@ pswError.className = 'error';
 
 pswInput.addEventListener('blur', function(event) {
     var pswValue = pswInput.value.trim();
-    if(pswValue === "") {
-        errorTextPsw.nodeValue = 'Field Required';
-        alert('Field Required');
-    }
-    else if (!onlyNumbersAndLetters(pswValue)) {
+    if(pswValue === "") 
+        errorTextPsw.nodeValue = 'Password field Required';
+    else if (!onlyNumbersAndLetters(pswValue))
         errorTextPsw.nodeValue = 'Password must only contain letters and numbers';
-        alert('Password must only contain letters and numbers');
-    }
 });
 
 pswInput.addEventListener('focus', function() {
     errorTextPsw.nodeValue = '';
 });
+
+//Submit button
+var form = document.getElementById('form');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var alertMessage = '';
+    errorFlag = false;
+
+    if(errorTextEmail.nodeValue === 'Email have an incorrect format') {
+        alertMessage += 'Email have an incorrect format\n';
+        errorFlag = true;
+    }
+    else if(errorTextEmail.nodeValue === 'Email field Required') {
+        alertMessage += 'Email field Required\n';
+        errorFlag = true;
+    }
+    
+    if(errorTextPsw.nodeValue === 'Password must only contain letters and numbers') {
+        alertMessage += 'Password must only contain letters and numbers\n';
+        errorFlag = true;
+    }
+    else if(errorTextPsw.nodeValue === 'Password field Required') {
+        alertMessage += 'Password field Required\n';
+        errorFlag = true;
+    }
+
+    if(errorFlag === false) {
+        alertMessage = 'Form information:\n';
+        alertMessage += 'Email: ' + emailInput.value.trim();
+        alertMessage += '\nPassword: ' + pswInput.value.trim();
+        alert(alertMessage);
+    }
+    else
+        alert(alertMessage);
+});
+
 
