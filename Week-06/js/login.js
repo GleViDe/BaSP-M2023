@@ -59,27 +59,14 @@ var form = document.getElementById('form');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     var alertMessage = '';
-    errorFlag = false;
 
-    if(errorTextEmail.nodeValue === 'Email have an incorrect format') {
-        alertMessage += 'Email have an incorrect format\n';
-        errorFlag = true;
-    }
-    else if(errorTextEmail.nodeValue === 'Email field Required') {
-        alertMessage += 'Email field Required\n';
-        errorFlag = true;
-    }
-    
-    if(errorTextPsw.nodeValue === 'Password must only contain letters and numbers') {
-        alertMessage += 'Password must only contain letters and numbers\n';
-        errorFlag = true;
-    }
-    else if(errorTextPsw.nodeValue === 'Password field Required') {
-        alertMessage += 'Password field Required\n';
-        errorFlag = true;
-    }
+    if(errorTextEmail.nodeValue !== '')
+        alertMessage += errorTextEmail.nodeValue + '\n';
 
-    if(errorFlag === false) {
+    if(errorTextPsw.nodeValue !== '')
+        alertMessage += errorTextPsw.nodeValue + '\n';
+
+    if(alertMessage === '') {
         alertMessage = 'Form information:\n';
         alertMessage += 'Email: ' + emailInput.value.trim();
         alertMessage += '\nPassword: ' + pswInput.value.trim();

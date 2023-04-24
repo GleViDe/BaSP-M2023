@@ -303,6 +303,61 @@ confPswInput.addEventListener('focus', function() {
     errorTextConfPsw.nodeValue = '';
 });
 
+//Submit button
+var form = document.getElementById('form');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var alertMessage = '';
+
+    if(errorTextName.nodeValue !== '')
+        alertMessage += errorTextName.nodeValue + '\n';
+
+    if(errorTextLastName.nodeValue !== '')
+        alertMessage += errorTextLastName.nodeValue + '\n';
+
+    if(errorTextDNI.nodeValue !== '')
+        alertMessage += errorTextDNI.nodeValue + '\n';
+
+    if(errorTextDate.nodeValue !== '')
+        alertMessage += errorTextDate.nodeValue + '\n';
+
+    if(errorTextPhone.nodeValue !== '')
+        alertMessage += errorTextPhone.nodeValue + '\n';
+
+    if(errorTextAddress.nodeValue !== '')
+        alertMessage += errorTextAddress.nodeValue + '\n';
+    
+    if(errorTextLocal.nodeValue !== '')
+        alertMessage += errorTextLocal.nodeValue + '\n';
+
+    if(errorTextPostal.nodeValue !== '')
+        alertMessage += errorTextPostal.nodeValue + '\n';
+
+    if(errorTextPsw.nodeValue !== '')
+        alertMessage += errorTextPsw.nodeValue + '\n';
+
+    if(errorTextConfPsw.nodeValue !== '')
+        alertMessage += errorTextConfPsw.nodeValue + '\n';
+
+    if(alertMessage === '') {
+        alertMessage = 'Form information:\n';
+        alertMessage += 'Name: ' + nameInput.value.trim();
+        alertMessage += '\nLast Name: ' + lastNameInput.value.trim();
+        alertMessage += '\nLast ID Number: ' + dniInput.value.trim();
+        alertMessage += '\nBirthdate: ' + dateInput.value.trim();
+        alertMessage += '\nPhone Number: ' + phoneInput.value.trim();
+        alertMessage += '\nAddress: ' + addressInput.value.trim();
+        alertMessage += '\nLocality: ' + localInput.value.trim();
+        alertMessage += '\nPostal Code: ' + postalInput.value.trim();
+        alertMessage += '\nPassword: ' + pswInput.value.trim();
+        alertMessage += '\nConfirm Password: ' + confPswInput.value.trim();
+        alert(alertMessage);
+    }
+    else
+        alert(alertMessage);
+});
+
 
 
 

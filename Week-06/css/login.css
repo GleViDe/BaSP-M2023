@@ -110,6 +110,10 @@ label {
 
 .error {
     color: #EB2222;
+    font-size: 15px;
+    background-color: #FF494980;
+    border-radius: 30px;
+    margin-top: 5px;
 }
 
 .submit {
