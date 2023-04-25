@@ -147,7 +147,7 @@ dateInput.addEventListener('blur', function() {
         errorTextDate.nodeValue = 'Invalid Date';
     var year = date.getFullYear();
     if((year < 1900) || year > (new Date().getFullYear() - 12))
-        errorTextDate.nodeValue = 'Must be over 12 to register';
+        errorTextDate.nodeValue = 'Invalid Date';
 })
 
 dateInput.addEventListener('focus', function() {
