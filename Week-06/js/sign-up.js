@@ -310,33 +310,45 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
     var alertMessage = '';
 
+    if(nameInput.value === '')
+        errorTextName.nodeValue = 'Name Field Required';
+    if(lastNameInput.value === '')
+        errorTextLastName.nodeValue = 'Last Name Field Required';
+    if(dniInput.value === '')
+        errorTextDNI.nodeValue = 'ID Number Field Required';
+    if(dateInput.value === '')
+        errorTextDate.nodeValue = 'Birthdate Field Required';
+    if(phoneInput.value === '')
+        errorTextPhone.nodeValue = 'Phone Number Field Required';
+    if(addressInput.value === '')
+        errorTextAddress.nodeValue = 'Address Field Required';
+    if(localInput.value === '')
+        errorTextLocal.nodeValue = 'Locality Name Field Required';
+    if(postalInput.value === '')
+        errorTextPostal.nodeValue = 'Postal Code Field Required';
+    if(pswInput.value === '')
+        errorTextPsw.nodeValue = 'Password Field Required';
+    if(confPswInput.value === '')
+        errorTextConfPsw.nodeValue = 'Confirm Password Field Required';
+
     if(errorTextName.nodeValue !== '')
         alertMessage += errorTextName.nodeValue + '\n';
-
     if(errorTextLastName.nodeValue !== '')
         alertMessage += errorTextLastName.nodeValue + '\n';
-
     if(errorTextDNI.nodeValue !== '')
         alertMessage += errorTextDNI.nodeValue + '\n';
-
     if(errorTextDate.nodeValue !== '')
         alertMessage += errorTextDate.nodeValue + '\n';
-
     if(errorTextPhone.nodeValue !== '')
         alertMessage += errorTextPhone.nodeValue + '\n';
-
     if(errorTextAddress.nodeValue !== '')
         alertMessage += errorTextAddress.nodeValue + '\n';
-    
     if(errorTextLocal.nodeValue !== '')
         alertMessage += errorTextLocal.nodeValue + '\n';
-
     if(errorTextPostal.nodeValue !== '')
         alertMessage += errorTextPostal.nodeValue + '\n';
-
     if(errorTextPsw.nodeValue !== '')
         alertMessage += errorTextPsw.nodeValue + '\n';
-
     if(errorTextConfPsw.nodeValue !== '')
         alertMessage += errorTextConfPsw.nodeValue + '\n';
 

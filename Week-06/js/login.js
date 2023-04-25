@@ -60,9 +60,13 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
     var alertMessage = '';
 
+    if(emailInput.value === '')
+        errorTextEmail.nodeValue = 'Email field Required';
+    if(pswInput.value === '')
+        errorTextPsw.nodeValue = 'Last Name Field Required';
+
     if(errorTextEmail.nodeValue !== '')
         alertMessage += errorTextEmail.nodeValue + '\n';
-
     if(errorTextPsw.nodeValue !== '')
         alertMessage += errorTextPsw.nodeValue + '\n';
 
