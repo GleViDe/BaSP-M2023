@@ -1,0 +1,37 @@
+footer {
+    text-align: center;
+    background-color: #D9D9D9;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+    background-color: #FFFFFF;
+}
+
+.social-media img {
+    margin: 0 50px;
+    width: 28px;
+}
+
+footer p {
+    padding: 20px 70px;
+}
+
+@media screen and (min-width: 600px) {
+.social-media {
+    padding: 40px 0;
+}
+
+    .social-media img {
+    margin: 0 80px;
+    width: 45px;
+}
+}
+
+@media screen and (min-width: 1025px) {
+footer {
+    min-width: 1440px;
+}
+}
