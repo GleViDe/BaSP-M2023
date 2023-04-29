@@ -256,6 +256,28 @@ postalInput.addEventListener('focus', function() {
     errorTextPostal.nodeValue = '';
 });
 
+//Validation of email input
+var emailInput = document.getElementById('email');
+var emailError = document.createElement('div');
+var errorTextEmail = document.createTextNode('');
+var emailContainer = document.querySelector('form div');
+emailContainer.appendChild(emailError);
+emailError.appendChild(errorTextEmail);
+var emailRegex = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+emailError.className = 'error';
+
+emailInput.addEventListener('blur', (event) => {
+    var emailValue = emailInput.value.trim();
+    if(emailValue === "") 
+        errorTextEmail.nodeValue = 'Email field Required';
+    else if(!emailRegex.test(emailValue))
+        errorTextEmail.nodeValue = 'Email have an incorrect format';
+});
+
+emailInput.addEventListener('focus', () => {
+    errorTextEmail.nodeValue = '';
+});
+
 //Validation of password input
 var pswInput = document.getElementById('password');
 var pswError = document.createElement('div');
@@ -353,18 +375,44 @@ form.addEventListener('submit', function(event) {
         alertMessage += errorTextConfPsw.nodeValue + '\n';
 
     if(alertMessage === '') {
-        alertMessage = 'Form information:\n';
-        alertMessage += 'Name: ' + nameInput.value.trim();
-        alertMessage += '\nLast Name: ' + lastNameInput.value.trim();
-        alertMessage += '\nLast ID Number: ' + dniInput.value.trim();
-        alertMessage += '\nBirthdate: ' + dateInput.value.trim();
-        alertMessage += '\nPhone Number: ' + phoneInput.value.trim();
-        alertMessage += '\nAddress: ' + addressInput.value.trim();
-        alertMessage += '\nLocality: ' + localInput.value.trim();
-        alertMessage += '\nPostal Code: ' + postalInput.value.trim();
-        alertMessage += '\nPassword: ' + pswInput.value.trim();
-        alertMessage += '\nConfirm Password: ' + confPswInput.value.trim();
-        alert(alertMessage);
+        const formData = new FormData(form);
+        let params = new URLSearchParams(formData);
+        var dateValue = dateInput.value;
+        var date = new Date(dateValue);
+        const formattedDate = `${(date.getMonth() + 1).toString().padStart(2,'0')}/${(date.getDate() + 1).toString().padStart(2,'0')}/${date.getFullYear()}`;
+        params.set('birthdate', formattedDate);
+        let queryParams = params.toString();
+        queryParams = queryParams.replace('lastname', 'lastName');
+        queryParams = queryParams.replace('locality', 'city');
+        queryParams = queryParams.replace('postal-code', 'zip');
+        queryParams = queryParams.replace('birthdate', 'dob');
+        fetch(`https://api-rest-server.vercel.app/signup?${queryParams}`)
+            .then(response => response.json())
+            .then(data => {
+                if(!data.success) {
+                    alertMessage = 'The request was not succesful\n';
+                    for(let i = 0; i < data.errors.length; i++) {
+                        alertMessage += data.errors[i].msg + '\n';
+                    }
+                    throw new Error(alertMessage);
+                }
+                else {
+                    alert(`The request was successful \n${data.msg}`);
+                    alertMessage = 'Form information:\n';
+                    alertMessage += 'Name: ' + nameInput.value.trim();
+                    alertMessage += '\nLast Name: ' + lastNameInput.value.trim();
+                    alertMessage += '\nLast ID Number: ' + dniInput.value.trim();
+                    alertMessage += '\nBirthdate: ' + dateInput.value.trim();
+                    alertMessage += '\nPhone Number: ' + phoneInput.value.trim();
+                    alertMessage += '\nAddress: ' + addressInput.value.trim();
+                    alertMessage += '\nLocality: ' + localInput.value.trim();
+                    alertMessage += '\nPostal Code: ' + postalInput.value.trim();
+                    alertMessage += '\nPassword: ' + pswInput.value.trim();
+                    alertMessage += '\nConfirm Password: ' + confPswInput.value.trim();
+                    alert(alertMessage);
+                }
+            })   
+            .catch(error => alert(error));
     }
     else
         alert(alertMessage);

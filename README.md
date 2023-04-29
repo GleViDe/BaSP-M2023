@@ -11,6 +11,7 @@ Inside here are the files of the project of the web page based on the landing pa
 - Week-04 contains this HTML structure styled with CSS using Responsive design with Mobile First method. You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-04)
 - Week-05 contains a very simple web page structure, with javascript files related to it. You can find these exercises in [link](https://glevide.github.io/BaSP-M2023/Week-05)
 - Week-06 contains contains the design of the landing page that was worked on in Week-04, and a link for the Login and Sign Up pages was added. Now with an added validation in the forms of said pages.You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-06/views)
+- Week-07 You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-07/views)
 
 ## Technology contained in this repository
 
@@ -56,6 +57,9 @@ Until now, you will find:
 - We learned about the DOM and how to manipulate it using JavaScript.
 - We gain the ability to handle events in the DOM.
 - You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-06/views)
+
+### Week 07
+ You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-07/views)
 
 ## Authors
 

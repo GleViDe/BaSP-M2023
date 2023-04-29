@@ -77,18 +77,14 @@ form.addEventListener('submit', (event) => {
         fetch(`https://api-rest-server.vercel.app/login?${queryParams}`)
             .then(response => response.json())
             .then(data => {
-                if(!data.success) {
-                    alert(`The request was not successful \n${data.msg}`);
-                }
+                if(!data.success)
+                    throw new Error(`The request was not successful \n${data.msg}`);
                 else {
                     alert(`The request was successful \n${data.msg}`);
-                    alertMessage = 'Form information:\n';
-                    alertMessage += 'Email: ' + emailInput.value.trim();
-                    alertMessage += '\nPassword: ' + pswInput.value.trim();
-                    alert(alertMessage);
+                    alert(`Form information:\nEmail: ${emailInput.value.trim()}\nPassword: ${pswInput.value.trim()}`);
                 }
             })   
-            .catch(error => console.error(error));
+            .catch(error => alert(error));
     }
     else
         alert(alertMessage);
