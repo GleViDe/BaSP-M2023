@@ -62,6 +62,32 @@ function testPsw(value) {
     return true;
 }
 
+window.onload = () => {
+    const name = localStorage.getItem('name');
+    const lastName = localStorage.getItem('lastname');
+    const dni = localStorage.getItem('dni');
+    const birthdate = localStorage.getItem('birthdate');
+    const phone = localStorage.getItem('phone');
+    const address = localStorage.getItem('address');
+    const locality = localStorage.getItem('locality');
+    const postalCode = localStorage.getItem('postal-code');
+    const email = localStorage.getItem('email');
+    const password = localStorage.getItem('password');
+    const confPassword = localStorage.getItem('conf-password');
+
+    document.getElementById('name').value = name;
+    document.getElementById('lastname').value = lastName;
+    document.getElementById('dni').value = dni;
+    document.getElementById('birthdate').value = birthdate;
+    document.getElementById('phone').value = phone;
+    document.getElementById('address').value = address;
+    document.getElementById('locality').value = locality;
+    document.getElementById('postal-code').value = postalCode;
+    document.getElementById('email').value = email;
+    document.getElementById('password').value = password;
+    document.getElementById('conf-password').value = confPassword;
+}
+
 //Validation of name input
 var nameInput = document.getElementById('name');
 var nameError = document.createElement('span');
@@ -397,19 +423,23 @@ form.addEventListener('submit', function(event) {
                     throw new Error(alertMessage);
                 }
                 else {
+                    for(const[key, value] of formData) {
+                        localStorage.setItem(key, value);
+                    }
                     alert(`The request was successful \n${data.msg}`);
                     alertMessage = 'Form information:\n';
                     alertMessage += 'Name: ' + nameInput.value.trim();
                     alertMessage += '\nLast Name: ' + lastNameInput.value.trim();
-                    alertMessage += '\nLast ID Number: ' + dniInput.value.trim();
+                    alertMessage += '\nID Number: ' + dniInput.value.trim();
                     alertMessage += '\nBirthdate: ' + dateInput.value.trim();
                     alertMessage += '\nPhone Number: ' + phoneInput.value.trim();
                     alertMessage += '\nAddress: ' + addressInput.value.trim();
                     alertMessage += '\nLocality: ' + localInput.value.trim();
                     alertMessage += '\nPostal Code: ' + postalInput.value.trim();
+                    alertMessage += '\nEmail: ' + email.value.trim();
                     alertMessage += '\nPassword: ' + pswInput.value.trim();
                     alertMessage += '\nConfirm Password: ' + confPswInput.value.trim();
-                    alert(alertMessage);
+                    alert(alertMessage);                    
                 }
             })   
             .catch(error => alert(error));
@@ -417,9 +447,3 @@ form.addEventListener('submit', function(event) {
     else
         alert(alertMessage);
 });
-
-
-
-
-
-
