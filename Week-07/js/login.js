@@ -1,8 +1,7 @@
 function onlyNumbersAndLetters(expresion) {
     for (var i = 0; i < expresion.length; i++) {
         var charCode = expresion.charCodeAt(i);
-        if (!(charCode >= 48 && charCode <= 57) && 
-        !(charCode >= 65 && charCode <= 90) && 
+        if (!(charCode >= 48 && charCode <= 57) && !(charCode >= 65 && charCode <= 90) && 
         !(charCode >= 97 && charCode <= 122)) { 
             return false;
         }
@@ -20,15 +19,17 @@ emailError.appendChild(errorTextEmail);
 var emailRegex = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 emailError.className = 'error';
 
-emailInput.addEventListener('blur', (event) => {
+emailInput.addEventListener('blur', function(event) {
     var emailValue = emailInput.value.trim();
-    if(emailValue === "") 
+    if(emailValue === "") {
         errorTextEmail.nodeValue = 'Email field Required';
-    else if(!emailRegex.test(emailValue))
+    }
+    else if(!emailRegex.test(emailValue)) {
         errorTextEmail.nodeValue = 'Email have an incorrect format';
+    }
 });
 
-emailInput.addEventListener('focus', () => {
+emailInput.addEventListener('focus', function() {
     errorTextEmail.nodeValue = '';
 });
 
@@ -41,53 +42,62 @@ pswContainer.appendChild(pswError);
 pswError.appendChild(errorTextPsw);
 pswError.className = 'error';
 
-pswInput.addEventListener('blur', (event) => {
+pswInput.addEventListener('blur', function(event) {
     var pswValue = pswInput.value.trim();
-    if(pswValue === "") 
+    if(pswValue === "") {
         errorTextPsw.nodeValue = 'Password field Required';
-    else if (!onlyNumbersAndLetters(pswValue))
+    }
+    else if (!onlyNumbersAndLetters(pswValue)) {
         errorTextPsw.nodeValue = 'Password must only contain letters and numbers';
+    }
 });
 
-pswInput.addEventListener('focus', () => {
+pswInput.addEventListener('focus', function() {
     errorTextPsw.nodeValue = '';
 });
 
 //Submit button
-const form = document.getElementById('form');
+var form = document.getElementById('form');
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', function(event) {
     event.preventDefault();
-    let alertMessage = '';
+    var alertMessage = '';
 
-    if(emailInput.value === '')
+    if(emailInput.value === '') {
         errorTextEmail.nodeValue = 'Email field Required';
-    if(pswInput.value === '')
+    }
+    if(pswInput.value === '') {
         errorTextPsw.nodeValue = 'Last Name Field Required';
+    }
 
-    if(errorTextEmail.nodeValue !== '')
+    if(errorTextEmail.nodeValue !== '') {
         alertMessage += errorTextEmail.nodeValue + '\n';
-    if(errorTextPsw.nodeValue !== '')
+    }
+    if(errorTextPsw.nodeValue !== '') {
         alertMessage += errorTextPsw.nodeValue + '\n';
-
+    }
         
     if(alertMessage === '') {
-        const formData = new FormData(form);
-        const queryParams = new URLSearchParams(formData).toString();
-        fetch(`https://api-rest-server.vercel.app/login?${queryParams}`)
-            .then(response => response.json())
-            .then(data => {
-                if(!data.success)
-                    throw new Error(`The request was not successful \n${data.msg}`);
+        var formData = new FormData(form);
+        var queryParams = new URLSearchParams(formData).toString();
+        fetch('https://api-rest-server.vercel.app/login?' + queryParams)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                if(!data.success) {
+                    throw new Error('The request was not successful \n'+ data.msg);
+                }    
                 else {
-                    alert(`The request was successful \n${data.msg}`);
-                    alert(`Form information:\nEmail: ${emailInput.value.trim()}\nPassword: ${pswInput.value.trim()}`);
+                    alert('The request was successful \n' + data.msg);
+                    alert('Form information:\nEmail: ' + emailInput.value.trim() + '\nPassword: ' + pswInput.value.trim());
                 }
             })   
-            .catch(error => alert(error));
+            .catch(function(error) {
+                alert(error);
+            });
     }
-    else
+    else {
         alert(alertMessage);
+    }
 });
-
-
