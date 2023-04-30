@@ -383,7 +383,6 @@ confPswInput.addEventListener('focus', function() {
 });
 
 //Submit button
-var form = document.getElementById('form');
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -452,46 +451,53 @@ form.addEventListener('submit', function(event) {
     }
 
     if(alertMessage === '') {
-        var formData = new FormData(form);
-        var params = new URLSearchParams(formData);
-        var dateValue = dateInput.value;
+        var dateValue = dateInput.value.trim();
         var date = new Date(dateValue);
-        var formattedDate = `${(date.getMonth() + 1).toString().padStart(2,'0')}/${(date.getDate() + 1).toString().padStart(2,'0')}/${date.getFullYear()}`;
-        params.set('birthdate', formattedDate);
-        var queryParams = params.toString();
-        queryParams = queryParams.replace('lastname', 'lastName');
-        queryParams = queryParams.replace('locality', 'city');
-        queryParams = queryParams.replace('postal-code', 'zip');
-        queryParams = queryParams.replace('birthdate', 'dob');
-        fetch(`https://api-rest-server.vercel.app/signup?${queryParams}`)
+        date = (date.getMonth() + 1).toString().padStart(2,'0') + '/' + (date.getDate() + 1).toString().padStart(2,'0')
+        + '/' + date.getFullYear();
+        var name = nameInput.value.trim();
+        var lastName = lastNameInput.value.trim();
+        var dni = dniInput.value.trim();
+        var phone = phoneInput.value.trim();
+        var address = addressInput.value.trim();
+        var locality = localInput.value.trim();
+        var postalCode = postalInput.value.trim();
+        var email = emailInput.value.trim();
+        var psw = pswInput.value.trim();
+        var confPsw = confPswInput.value.trim();
+        var queryParams = 'name='+ name +'&lastName='+ lastName +'&dni='+ dni +'&dob='+ date +'&phone='+ phone +
+        '&address='+ address +'&city='+ locality +'&zip='+ postalCode +'&email='+ email +'&password=' + psw +'&conf-password='+ confPsw;
+
+        fetch('https://api-rest-server.vercel.app/signup?'+ queryParams)
             .then(function(response) {
                 return response.json();
             })
             .then(function(data) {
                 if(!data.success) {
                     alertMessage = 'The request was not succesful\n';
-                    for(let i = 0; i < data.errors.length; i++) {
+                    for(var i = 0; i < data.errors.length; i++) {
                         alertMessage += data.errors[i].msg + '\n';
                     }
                     throw new Error(alertMessage);
                 }
                 else {
-                    for(var[key, value] of formData) {
-                        localStorage.setItem(key, value);
-                    }
+                    localStorage.setItem('name', name);
+                    localStorage.setItem('lastname', lastName);
+                    localStorage.setItem('dni', dni);
+                    localStorage.setItem('birthdate', dateValue);
+                    localStorage.setItem('phone', phone);
+                    localStorage.setItem('address', address);
+                    localStorage.setItem('locality', locality);
+                    localStorage.setItem('postal-code', postalCode);
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('password', psw);
+                    localStorage.setItem('conf-password', confPsw);
+
                     alert(`The request was successful \n${data.msg}`);
-                    alertMessage = 'Form information:\n';
-                    alertMessage += 'Name: ' + nameInput.value.trim();
-                    alertMessage += '\nLast Name: ' + lastNameInput.value.trim();
-                    alertMessage += '\nID Number: ' + dniInput.value.trim();
-                    alertMessage += '\nBirthdate: ' + dateInput.value.trim();
-                    alertMessage += '\nPhone Number: ' + phoneInput.value.trim();
-                    alertMessage += '\nAddress: ' + addressInput.value.trim();
-                    alertMessage += '\nLocality: ' + localInput.value.trim();
-                    alertMessage += '\nPostal Code: ' + postalInput.value.trim();
-                    alertMessage += '\nEmail: ' + email.value.trim();
-                    alertMessage += '\nPassword: ' + pswInput.value.trim();
-                    alertMessage += '\nConfirm Password: ' + confPswInput.value.trim();
+                    alertMessage = 'Form information:\nName: '+ name +'\nLast Name: '+ lastName +'\nID Number: '+ dni +
+                    '\nBirthdate: '+ date +'\nPhone Number: '+ phone +'\nAddress: '+ address +'\nLocality: '+ locality
+                    +'\nPostal Code: '+ postalCode +'\nEmail: '+ email +'\nPassword: '+ psw +'\nConfirm Password: '+
+                    confPsw;
                     alert(alertMessage);                    
                 }
             })   

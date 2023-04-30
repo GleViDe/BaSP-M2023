@@ -78,8 +78,9 @@ form.addEventListener('submit', function(event) {
     }
         
     if(alertMessage === '') {
-        var formData = new FormData(form);
-        var queryParams = new URLSearchParams(formData).toString();
+        var email = emailInput.value.trim();
+        var psw = pswInput.value.trim();
+        var queryParams = 'email='+ email +'&password='+ psw;
         fetch('https://api-rest-server.vercel.app/login?' + queryParams)
             .then(function(response) {
                 return response.json();
@@ -90,7 +91,7 @@ form.addEventListener('submit', function(event) {
                 }    
                 else {
                     alert('The request was successful \n' + data.msg);
-                    alert('Form information:\nEmail: ' + emailInput.value.trim() + '\nPassword: ' + pswInput.value.trim());
+                    alert('Form information:\nEmail: ' + email + '\nPassword: ' + psw);
                 }
             })   
             .catch(function(error) {

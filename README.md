@@ -19,7 +19,7 @@ Until now, you will find:
 - HTML
 - CSS with the pixel perfect method
 - CSS with Responsive design with Mobile First method
-- JavaScript with ES5 and ES6
+- JavaScript with ES5
 - HTTP request, using the Fetch method
 
 ## Development of the course through the weeks
