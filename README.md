@@ -10,8 +10,8 @@ Inside here are the files of the project of the web page based on the landing pa
 - Week-03 contains this HTML structure styled with CSS using the pixel perfect method.
 - Week-04 contains this HTML structure styled with CSS using Responsive design with Mobile First method. You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-04)
 - Week-05 contains a very simple web page structure, with javascript files related to it. You can find these exercises in [link](https://glevide.github.io/BaSP-M2023/Week-05)
-- Week-06 contains contains the design of the landing page that was worked on in Week-04, and a link for the Login and Sign Up pages was added. Now with an added validation in the forms of said pages.You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-06/views)
-- Week-07 You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-07/views)
+- Week-06 contains the design of the landing page that was worked on in Week-04, and a link for the Login and Sign Up pages was added. Now with an added validation in the forms of said pages.You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-06/views)
+- Week-07 contains the same design of the Week-06 views, now with an added HTTP request for the information collected in both forms, using the Fetch method. You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-07/views)
 
 ## Technology contained in this repository
 
@@ -19,7 +19,8 @@ Until now, you will find:
 - HTML
 - CSS with the pixel perfect method
 - CSS with Responsive design with Mobile First method
-- JavaScript with ES5
+- JavaScript with ES5 and ES6
+- HTTP request, using the Fetch method
 
 ## Development of the course through the weeks
 
@@ -59,7 +60,10 @@ Until now, you will find:
 - You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-06/views)
 
 ### Week 07
- You can find this design in [link](https://glevide.github.io/BaSP-M2023/Week-07/views)
+- The main characteristics of the client-server architecture were deepened.
+- We learned what asynchronous functions are and the difference between Callbacks and Promises.
+- HTTP request using de Fetch method added to the Login and Sign-up views.
+- You can find this new web page modification in [link](https://glevide.github.io/BaSP-M2023/Week-07/views)
 
 ## Authors
 
