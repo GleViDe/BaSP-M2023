@@ -7,6 +7,65 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000000;
+    background-color: #00000066;
+}
+
+.visible {
+    display: block;
+}
+
+.modal-content {
+    background-color: #FEFEFE;
+    margin: 15% auto;
+    border: 1px solid #888888;
+    width: 80%;
+}
+
+.modal-content p {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #373867;
+}
+
+.top h1 {
+    display: inline-block;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.close {
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000000;
+    cursor: pointer;
+}
+
 header {
     display: none;
 }

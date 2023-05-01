@@ -466,7 +466,8 @@ form.addEventListener('submit', function(event) {
         var psw = pswInput.value.trim();
         var confPsw = confPswInput.value.trim();
         var queryParams = 'name='+ name +'&lastName='+ lastName +'&dni='+ dni +'&dob='+ date +'&phone='+ phone +
-        '&address='+ address +'&city='+ locality +'&zip='+ postalCode +'&email='+ email +'&password=' + psw +'&conf-password='+ confPsw;
+        '&address='+ address +'&city='+ locality +'&zip='+ postalCode +'&email='+ email +'&password=' + psw +
+        '&conf-password='+ confPsw;
 
         fetch('https://api-rest-server.vercel.app/signup?'+ queryParams)
             .then(function(response) {

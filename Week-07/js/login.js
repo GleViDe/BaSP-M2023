@@ -57,11 +57,14 @@ pswInput.addEventListener('focus', function() {
 });
 
 //Submit button
-var form = document.getElementById('form');
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     var alertMessage = '';
+    var modal = document.getElementById("myModal");
+    var closeBtn = document.getElementsByClassName("close")[0];
+    var h1 = document.querySelector('.top h1');
+    var p = document.querySelector('.modal-content p');
 
     if(emailInput.value === '') {
         errorTextEmail.nodeValue = 'Email field Required';
@@ -87,18 +90,27 @@ form.addEventListener('submit', function(event) {
             })
             .then(function(data) {
                 if(!data.success) {
-                    throw new Error('The request was not successful \n'+ data.msg);
+                    throw new Error('The request was not successful<br>'+ data.msg);
                 }    
                 else {
-                    alert('The request was successful \n' + data.msg);
-                    alert('Form information:\nEmail: ' + email + '\nPassword: ' + psw);
+                    h1.textContent = 'Successful Login';
+                    p.innerHTML = 'The request was successful<br>'+ data.msg +'<br><br>Form information:<br>Email: '+
+                    email +'<br>Password: '+ psw;
+                    modal.className += " visible";
                 }
             })   
             .catch(function(error) {
-                alert(error);
+                h1.textContent = 'Login Failed';
+                p.innerHTML = error;
+                modal.className += " visible";
+                // alert(error);
             });
     }
     else {
         alert(alertMessage);
+    }
+
+    closeBtn.onclick = function() {
+        modal.className = modal.className.substring(0,5);
     }
 });
