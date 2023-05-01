@@ -387,6 +387,10 @@ confPswInput.addEventListener('focus', function() {
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     var alertMessage = '';
+    var modal = document.getElementById("myModal");
+    var closeBtn = document.getElementsByClassName("close")[0];
+    var h1 = document.querySelector('.top h1');
+    var p = document.querySelector('.modal-content p');
 
     if(nameInput.value === '') {
         errorTextName.nodeValue = 'Name Field Required';
@@ -420,34 +424,34 @@ form.addEventListener('submit', function(event) {
     }
 
     if(errorTextName.nodeValue !== '') {
-        alertMessage += errorTextName.nodeValue + '\n';
+        alertMessage += errorTextName.nodeValue + '<br>';
     }
     if(errorTextLastName.nodeValue !== '') {
-        alertMessage += errorTextLastName.nodeValue + '\n';
+        alertMessage += errorTextLastName.nodeValue + '<br>';
     }
     if(errorTextDNI.nodeValue !== '') {
-        alertMessage += errorTextDNI.nodeValue + '\n';
+        alertMessage += errorTextDNI.nodeValue + '<br>';
     }
     if(errorTextDate.nodeValue !== '') {
-        alertMessage += errorTextDate.nodeValue + '\n';
+        alertMessage += errorTextDate.nodeValue + '<br>';
     }
     if(errorTextPhone.nodeValue !== '') {
-        alertMessage += errorTextPhone.nodeValue + '\n';
+        alertMessage += errorTextPhone.nodeValue + '<br>';
     }
     if(errorTextAddress.nodeValue !== '') {
-        alertMessage += errorTextAddress.nodeValue + '\n';
+        alertMessage += errorTextAddress.nodeValue + '<br>';
     }
     if(errorTextLocal.nodeValue !== '') {
-        alertMessage += errorTextLocal.nodeValue + '\n';
+        alertMessage += errorTextLocal.nodeValue + '<br>';
     }
     if(errorTextPostal.nodeValue !== '') {
-        alertMessage += errorTextPostal.nodeValue + '\n';
+        alertMessage += errorTextPostal.nodeValue + '<br>';
     }
     if(errorTextPsw.nodeValue !== '') {
-        alertMessage += errorTextPsw.nodeValue + '\n';
+        alertMessage += errorTextPsw.nodeValue + '<br>';
     }
     if(errorTextConfPsw.nodeValue !== '') {
-        alertMessage += errorTextConfPsw.nodeValue + '\n';
+        alertMessage += errorTextConfPsw.nodeValue + '<br>';
     }
 
     if(alertMessage === '') {
@@ -475,9 +479,9 @@ form.addEventListener('submit', function(event) {
             })
             .then(function(data) {
                 if(!data.success) {
-                    alertMessage = 'The request was not succesful\n';
+                    alertMessage = 'The request was not succesful<br>';
                     for(var i = 0; i < data.errors.length; i++) {
-                        alertMessage += data.errors[i].msg + '\n';
+                        alertMessage += data.errors[i].msg + '<br>';
                     }
                     throw new Error(alertMessage);
                 }
@@ -494,19 +498,29 @@ form.addEventListener('submit', function(event) {
                     localStorage.setItem('password', psw);
                     localStorage.setItem('conf-password', confPsw);
 
-                    alert(`The request was successful \n${data.msg}`);
-                    alertMessage = 'Form information:\nName: '+ name +'\nLast Name: '+ lastName +'\nID Number: '+ dni +
-                    '\nBirthdate: '+ date +'\nPhone Number: '+ phone +'\nAddress: '+ address +'\nLocality: '+ locality
-                    +'\nPostal Code: '+ postalCode +'\nEmail: '+ email +'\nPassword: '+ psw +'\nConfirm Password: '+
-                    confPsw;
-                    alert(alertMessage);                    
+                    alertMessage = 'The request was successful <br>'+ data.msg + '<br><br>Form information:<br>Name: '+
+                    name +'<br>Last Name: '+ lastName +'<br>ID Number: '+ dni +'<br>Birthdate: '+ date +
+                    '<br>Phone Number: '+ phone +'<br>Address: '+ address +'<br>Locality: '+ locality +
+                    '<br>Postal Code: '+ postalCode +'<br>Email: '+ email +'<br>Password: '+ psw +
+                    '<br>Confirm Password: '+ confPsw;
+                    h1.textContent = 'Successful Sign Up';
+                    p.innerHTML = alertMessage;
+                    modal.className += " visible";
                 }
             })   
             .catch(function(error) {
-                alert(error);
+                h1.textContent = 'Sign Up Failed';
+                p.innerHTML = error;
+                modal.className += " visible";
             });
     }
     else {
-        alert(alertMessage);
+        h1.textContent = 'Sign Up Failed';
+        p.innerHTML = alertMessage;
+        modal.className += " visible";
+    }
+    
+    closeBtn.onclick = function() {
+        modal.className = modal.className.substring(0,5);
     }
 });

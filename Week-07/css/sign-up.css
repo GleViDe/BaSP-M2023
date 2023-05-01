@@ -7,6 +7,80 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000000;
+    background-color: #00000066;
+}
+
+.visible {
+    display: block;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #FEFEFE;
+    margin: 15% auto;
+    border: 1px solid #888888;
+    width: fit-content;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.8s;
+    animation-name: animatetop;
+    animation-duration: 0.8s;
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal-content p {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #373867;
+}
+
+.top h1 {
+    display: inline-block;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.close {
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000000;
+    cursor: pointer;
+}
+
 header {
     display: none;
 }
@@ -175,6 +249,21 @@ input[type="submit"] {
         display: flex;
         flex-wrap: wrap;
         height: 100vh;
+    }
+
+    .modal-content p {
+        padding: 30px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 23px;
+    }
+
+    .top h1 {
+        padding: 20px;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 32px;
+        color: #FFFFFF;
     }
 
     aside {

@@ -74,10 +74,10 @@ form.addEventListener('submit', function(event) {
     }
 
     if(errorTextEmail.nodeValue !== '') {
-        alertMessage += errorTextEmail.nodeValue + '\n';
+        alertMessage += errorTextEmail.nodeValue + '<br>';
     }
     if(errorTextPsw.nodeValue !== '') {
-        alertMessage += errorTextPsw.nodeValue + '\n';
+        alertMessage += errorTextPsw.nodeValue + '<br>';
     }
         
     if(alertMessage === '') {
@@ -103,11 +103,12 @@ form.addEventListener('submit', function(event) {
                 h1.textContent = 'Login Failed';
                 p.innerHTML = error;
                 modal.className += " visible";
-                // alert(error);
             });
     }
     else {
-        alert(alertMessage);
+        h1.textContent = 'Login Failed';
+        p.innerHTML = alertMessage;
+        modal.className += " visible";
     }
 
     closeBtn.onclick = function() {
