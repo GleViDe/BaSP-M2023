@@ -74,10 +74,10 @@ form.addEventListener('submit', function(event) {
     }
 
     if(errorTextEmail.nodeValue !== '') {
-        alertMessage += errorTextEmail.nodeValue + '<br>';
+        alertMessage += errorTextEmail.nodeValue + '\n';
     }
     if(errorTextPsw.nodeValue !== '') {
-        alertMessage += errorTextPsw.nodeValue + '<br>';
+        alertMessage += errorTextPsw.nodeValue + '\n';
     }
         
     if(alertMessage === '') {
@@ -90,12 +90,12 @@ form.addEventListener('submit', function(event) {
             })
             .then(function(data) {
                 if(!data.success) {
-                    throw new Error('The request was not successful<br>'+ data.msg);
+                    throw new Error('The request was not successful\n'+ data.msg);
                 }    
                 else {
                     h1.textContent = 'Successful Login';
-                    p.innerHTML = 'The request was successful<br>'+ data.msg +'<br><br>Form information:<br>Email: '+
-                    email +'<br>Password: '+ psw;
+                    p.innerHTML = 'The request was successful\n'+ data.msg +'\n\nForm information:\nEmail: '+
+                    email +'\nPassword: '+ psw;
                     modal.className += " visible";
                 }
             })   

@@ -60,18 +60,18 @@ function testPsw(value) {
     return true;
 }
 
-window.onload = () => {
-    const name = localStorage.getItem('name');
-    const lastName = localStorage.getItem('lastname');
-    const dni = localStorage.getItem('dni');
-    const birthdate = localStorage.getItem('birthdate');
-    const phone = localStorage.getItem('phone');
-    const address = localStorage.getItem('address');
-    const locality = localStorage.getItem('locality');
-    const postalCode = localStorage.getItem('postal-code');
-    const email = localStorage.getItem('email');
-    const password = localStorage.getItem('password');
-    const confPassword = localStorage.getItem('conf-password');
+window.onload = function() {
+    var name = localStorage.getItem('name');
+    var lastName = localStorage.getItem('lastname');
+    var dni = localStorage.getItem('dni');
+    var birthdate = localStorage.getItem('birthdate');
+    var phone = localStorage.getItem('phone');
+    var address = localStorage.getItem('address');
+    var locality = localStorage.getItem('locality');
+    var postalCode = localStorage.getItem('postal-code');
+    var email = localStorage.getItem('email');
+    var password = localStorage.getItem('password');
+    var confPassword = localStorage.getItem('conf-password');
 
     document.getElementById('name').value = name;
     document.getElementById('lastname').value = lastName;
@@ -424,34 +424,34 @@ form.addEventListener('submit', function(event) {
     }
 
     if(errorTextName.nodeValue !== '') {
-        alertMessage += errorTextName.nodeValue + '<br>';
+        alertMessage += errorTextName.nodeValue + '\n';
     }
     if(errorTextLastName.nodeValue !== '') {
-        alertMessage += errorTextLastName.nodeValue + '<br>';
+        alertMessage += errorTextLastName.nodeValue + '\n';
     }
     if(errorTextDNI.nodeValue !== '') {
-        alertMessage += errorTextDNI.nodeValue + '<br>';
+        alertMessage += errorTextDNI.nodeValue + '\n';
     }
     if(errorTextDate.nodeValue !== '') {
-        alertMessage += errorTextDate.nodeValue + '<br>';
+        alertMessage += errorTextDate.nodeValue + '\n';
     }
     if(errorTextPhone.nodeValue !== '') {
-        alertMessage += errorTextPhone.nodeValue + '<br>';
+        alertMessage += errorTextPhone.nodeValue + '\n';
     }
     if(errorTextAddress.nodeValue !== '') {
-        alertMessage += errorTextAddress.nodeValue + '<br>';
+        alertMessage += errorTextAddress.nodeValue + '\n';
     }
     if(errorTextLocal.nodeValue !== '') {
-        alertMessage += errorTextLocal.nodeValue + '<br>';
+        alertMessage += errorTextLocal.nodeValue + '\n';
     }
     if(errorTextPostal.nodeValue !== '') {
-        alertMessage += errorTextPostal.nodeValue + '<br>';
+        alertMessage += errorTextPostal.nodeValue + '\n';
     }
     if(errorTextPsw.nodeValue !== '') {
-        alertMessage += errorTextPsw.nodeValue + '<br>';
+        alertMessage += errorTextPsw.nodeValue + '\n';
     }
     if(errorTextConfPsw.nodeValue !== '') {
-        alertMessage += errorTextConfPsw.nodeValue + '<br>';
+        alertMessage += errorTextConfPsw.nodeValue + '\n';
     }
 
     if(alertMessage === '') {
@@ -479,7 +479,7 @@ form.addEventListener('submit', function(event) {
             })
             .then(function(data) {
                 if(!data.success) {
-                    alertMessage = 'The request was not succesful<br>';
+                    alertMessage = 'The request was not succesful\n';
                     for(var i = 0; i < data.errors.length; i++) {
                         alertMessage += data.errors[i].msg + '<br>';
                     }
@@ -498,11 +498,10 @@ form.addEventListener('submit', function(event) {
                     localStorage.setItem('password', psw);
                     localStorage.setItem('conf-password', confPsw);
 
-                    alertMessage = 'The request was successful <br>'+ data.msg + '<br><br>Form information:<br>Name: '+
-                    name +'<br>Last Name: '+ lastName +'<br>ID Number: '+ dni +'<br>Birthdate: '+ date +
-                    '<br>Phone Number: '+ phone +'<br>Address: '+ address +'<br>Locality: '+ locality +
-                    '<br>Postal Code: '+ postalCode +'<br>Email: '+ email +'<br>Password: '+ psw +
-                    '<br>Confirm Password: '+ confPsw;
+                    alertMessage = 'The request was successful \n'+ data.msg + '\n\nForm information:\nName: '+ name +
+                    '\nLast Name: '+ lastName +'\nID Number: '+ dni +'\nBirthdate: '+ date +'\nPhone Number: '+ phone +
+                    '\nAddress: '+ address +'\nLocality: '+ locality +'\nPostal Code: '+ postalCode +'\nEmail: '+ email
+                    +'\nPassword: '+ psw +'\nConfirm Password: '+ confPsw;
                     h1.textContent = 'Successful Sign Up';
                     p.innerHTML = alertMessage;
                     modal.className += " visible";
